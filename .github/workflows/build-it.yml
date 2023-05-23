@@ -1,6 +1,10 @@
 name: build-it
 run-name: ${{ github.actor }} is build it
-on: [push]
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 jobs:
   just-build-it:
     runs-on: ubuntu-22.04
