@@ -1,0 +1,12 @@
+name: build-it
+run-name: ${{ github.actor }} is build it
+on: [push]
+jobs:
+  just-build-it:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - run: npm run build
